@@ -1,12 +1,11 @@
 package homework2;
 
-public class Ship extends Transport {
+public final class Ship extends Transport {
 
-    public Ship(int model, String license){
-        super(model,license);
+    public Ship(int model, String license) {
+        super(model, license);
 
     }
-
 
 
     /* public double calculateCost(){
@@ -19,8 +18,8 @@ public class Ship extends Transport {
                     }
                 */
     @Override
-    public String toString() {
-        return "homework1.Delivery will be sent by a homework1.Ship, model: "+this.getModel() +"license: "+this.getLicense();
+    public void printData() {
+        System.out.println("Delivery will be sent by a Ship, model: " + this.getModel() + " " + "license: " + this.getLicense());
     }
 }
 

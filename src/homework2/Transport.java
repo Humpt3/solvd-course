@@ -4,9 +4,11 @@ public abstract class Transport {
     private int model;
     private String license;
 
-    public Transport(int model, String license){
+
+    public Transport(int model, String license) {
         this.model = model;
-        this.license=license;
+        this.license = license;
+
     }
 
 
@@ -18,6 +20,7 @@ public abstract class Transport {
         this.model = model;
     }
 
+
     public String getLicense() {
         return license;
     }
@@ -27,7 +30,5 @@ public abstract class Transport {
     }
 
 
-
-    @Override
-    public abstract String toString();
+    public abstract void printData();
 }

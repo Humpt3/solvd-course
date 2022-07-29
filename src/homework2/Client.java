@@ -9,16 +9,16 @@ public class Client {
     private Product product;
 
 
-    public Client(){
+    public Client() {
 
     }
 
-    public Client (String name, String adress, double phone, boolean isComercial, Product product){
+    public Client(String name, String adress, double phone, boolean isComercial, Product product) {
         this.name = name;
         this.adress = adress;
         this.phone = phone;
         this.isComercial = isComercial;
-        this.product=product;
+        this.product = product;
     }
 
     public void setName(String name) {
@@ -63,11 +63,10 @@ public class Client {
 
 
     public String toString() {
-        return "homework1.Client{" +
-                "name='" + this.getName() + '\'' +
-                ", adress='" + this.getAdress() + '\'' +
-                ", phone=" + this.getPhone() +
-                ", isComercial=" + this.getIsComercial() +
+        return "Client name: '" + name + '\'' +
+                ", adress='" + adress + '\'' +
+                ", phone=" + phone +
+                ", isComercial=" + isComercial +
                 '}';
     }
 
