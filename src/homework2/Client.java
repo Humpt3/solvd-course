@@ -62,11 +62,11 @@ public class Client {
     }
 
 
-    public String toString() {
+    public String clientDetails() {
         return "Client name: '" + name + '\'' +
                 ", adress='" + adress + '\'' +
                 ", phone=" + phone +
-                ", isComercial=" + isComercial +
+                ", is Comercial=" + isComercial +
                 '}';
     }
 
