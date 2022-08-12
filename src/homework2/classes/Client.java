@@ -1,24 +1,34 @@
-package homework2;
+package homework2.classes;
+
+import homework2.exceptions.PhoneNumberException;
+
+import java.util.LinkedList;
 
 public class Client {
     private String name;
     private String adress;
-    private double phone;
+    private String phone;
     private boolean isComercial;
 
-    private Product product;
+    private LinkedList<Product> product;
 
 
     public Client() {
 
     }
 
-    public Client(String name, String adress, double phone, boolean isComercial, Product product) {
+    public Client(String name, String adress, String phone, boolean isComercial) {
         this.name = name;
         this.adress = adress;
         this.phone = phone;
         this.isComercial = isComercial;
-        this.product = product;
+        this.product = new LinkedList<>();
+
+        try {
+            Client.phoneNumbValidation(phone);
+        } catch (PhoneNumberException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void setName(String name) {
@@ -29,7 +39,7 @@ public class Client {
         this.adress = adress;
     }
 
-    public void setPhone(double phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -37,9 +47,6 @@ public class Client {
         isComercial = comercial;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 
     public String getName() {
         return name;
@@ -49,11 +56,11 @@ public class Client {
         return adress;
     }
 
-    public double getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public Product getProduct() {
+    public LinkedList<Product> getProduct() {
         return product;
     }
 
@@ -68,6 +75,16 @@ public class Client {
                 ", phone=" + phone +
                 ", is Comercial=" + isComercial +
                 '}';
+    }
+
+    //method for exception
+
+    public static void phoneNumbValidation(String phone) throws PhoneNumberException {
+        if (phone.length() < 1 && phone.length() > 12) {
+            throw new PhoneNumberException();
+
+        }
+
     }
 
 }

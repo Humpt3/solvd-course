@@ -1,4 +1,4 @@
-package homework2;
+package homework2.classes;
 
 public abstract class Transport {
     private int model;

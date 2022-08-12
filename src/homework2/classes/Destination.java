@@ -1,10 +1,14 @@
-package homework2;
+package homework2.classes;
 
-public class Destination {
+import homework2.interfaces.ITracing;
+
+public class Destination implements ITracing {
     private String country;
     private String city;
     private String adress;
 
+    public Destination() {
+    }
 
     public Destination(String country, String city, String adress) {
         this.country = country;
@@ -40,4 +44,12 @@ public class Destination {
         return "Adress: " + getAdress() + " " + "City: " + getCity() + " " + "Country: " + getCountry();
     }
 
+    @Override
+    public void tracking(Delivery delivery) {
+        if (delivery.getStateDelivery() == "Delivered") {
+            System.out.println("The product has been Delivered");
+        } else {
+            System.out.println("The product has not yet arrived");
+        }
+    }
 }

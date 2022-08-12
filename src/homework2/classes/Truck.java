@@ -1,6 +1,8 @@
-package homework2;
+package homework2.classes;
 
-public class Truck extends Transport {
+import homework2.interfaces.IExtraCharge;
+
+public class Truck extends Transport implements IExtraCharge {
 
 
     public Truck(int model, String license) {
@@ -8,6 +10,16 @@ public class Truck extends Transport {
 
     }
 
+
+    @Override
+    public void messageExtraCharge() {
+        System.out.println("This will have an extra chrage of: $150");
+    }
+
+    @Override
+    public double addExtraCharge() {
+        return 150;
+    }
 
     /* public double calculateCost(){
                         double tcost=0;

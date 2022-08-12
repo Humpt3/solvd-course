@@ -1,11 +1,15 @@
-package homework2;
+package homework2.classes;
 
-public class Origin {
+import homework2.interfaces.ITracing;
+
+public class Origin implements ITracing {
     private int branchNumber;
 
     private int phoneNumber;
     private String location;
 
+    public Origin() {
+    }
 
     public Origin(int branchNumber, int phoneNumber, String location) {
         this.branchNumber = branchNumber;
@@ -39,5 +43,14 @@ public class Origin {
 
     public String originDetails() {
         return "Branch number: " + getBranchNumber() + " " + "Phone number: " + getPhoneNumber() + " " + "Location: " + getLocation();
+    }
+
+    @Override
+    public void tracking(Delivery delivery) {
+        if (delivery.getStateDelivery() == "Shipped") {
+            System.out.println("The product has been Shipped");
+        } else {
+            System.out.println("The product has not yet been shipped");
+        }
     }
 }
